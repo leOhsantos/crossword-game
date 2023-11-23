@@ -22,21 +22,41 @@ const subtitle18 = document.getElementById("subtitle18");
 const finalText = document.getElementById("finalText");
 
 let words = [
-    ["", "1", "", "", "", "", "", "", ""],
-    ["", "z", "", "", "", "", "3", "", ""],
-    ["2", "o", "n", "e", "p", "i", "e", "c", "e"],
-    ["", "r", "", "", "", "", "n", "", ""],
-    ["", "o", "", "", "", "", "e", "", ""],
-    ["", "", "", "", "", "", "l", "", ""]
+    ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "6.", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
+    ["", "", "", "", "", "", "", "", "", "", "", "17.", "T", "H", "R", "E", "A", "D", "S", "", "", "", "", "", "", "", "", "", "", ""],
+    ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "P", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
+    ["", "", "", "", "9.", "", "", "", "", "", "", "", "", "", "", "R", "", "", "", "12.", "", "", "", "", "", "", "", "", "", ""],
+    ["", "", "", "", "D", "", "", "", "", "14.", "", "", "15.", "", "", "O", "", "", "", "D", "", "", "", "", "", "", "", "", "1.", ""],
+    ["", "", "", "8.", "M", "E", "M", "O", "R", "I", "A", "-", "D", "E", "-", "M", "A", "S", "S", "A", "", "", "", "", "", "", "", "", "C", ""],
+    ["", "", "18.", "C", "A", "C", "H", "E", "", "7", "", "2.", "U", "L", "A", "", "", "", "", "T", "", "", "", "", "", "", "", "", "P", ""],
+    ["", "", "", "", "", "", "", "", "", "", "", "", "A", "", "", "", "", "", "11.", "A", "D", "D", "R", "E", "S", "S", "-", "B", "U", "S"],
+    ["", "", "", "", "", "", "", "", "", "", "7.", "F", "L", "A", "S", "H", "", "", "", "-", "", "", "", "", "", "", "", "", "", ""],
+    ["", "", "", "", "", "", "", "", "", "", "", "", "-", "", "", "", "", "", "", "B", "", "", "", "", "", "", "", "", "", ""],
+    ["", "", "", "", "", "", "16.", "Q", "U", "A", "D", "-", "C", "O", "R", "E", "", "", "", "U", "", "", "", "", "", "", "", "", "", ""],
+    ["", "", "", "", "", "", "", "", "", "", "5.", "R", "O", "M", "", "", "", "10.", "C", "S", "", "", "", "", "", "", "", "", "", ""],
+    ["", "4.", "", "", "13.", "", "", "", "", "", "", "", "R", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
+    ["3.", "R", "E", "G", "I", "S", "T", "R", "A", "D", "O", "R", "E", "S", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
+    ["", "A", "", "", "5", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
+    ["", "M", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""]
 ];
 
 let wordsResponse = [
-    ["", "", "", "", "", "", "", "", ""],
-    ["", "", "", "", "", "", "", "", ""],
-    ["", "", "", "", "", "", "", "", ""],
-    ["", "", "", "", "", "", "", "", ""],
-    ["", "", "", "", "", "", "", "", ""],
-    ["", "", "", "", "", "", "", "", ""]
+    ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
+    ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
+    ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
+    ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
+    ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
+    ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
+    ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
+    ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
+    ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
+    ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
+    ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
+    ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
+    ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
+    ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
+    ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
+    ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""]
 ];
 
 function verifyInput(input) {
@@ -54,28 +74,87 @@ function verifyInput(input) {
 function validateResponse() {
     let score = 0;
 
-    if (wordsResponse[1][1] != "" && wordsResponse[2][1] != "" && wordsResponse[3][1] != "" && wordsResponse[4][1] != "") {
+    //tip 1
+    if (wordsResponse[5][28] != "" && wordsResponse[6][28] != "" && wordsResponse[7][28] != "") {
         score++;
         subtitle1.classList.add("right");
     } else {
         subtitle1.classList.remove("right");
     }
 
-    if (wordsResponse[2][1] != "" && wordsResponse[2][2] != "" && wordsResponse[2][3] != "" && wordsResponse[2][4] != "" && wordsResponse[2][5] != "" && wordsResponse[2][6] != "" && wordsResponse[2][7] != "" && wordsResponse[2][8] != "") {
+    //tip 2
+    if (wordsResponse[6][12] != "" && wordsResponse[6][13] != "" && wordsResponse[6][14] != "") {
         score++;
         subtitle2.classList.add("right");
     } else {
         subtitle2.classList.remove("right");
     }
 
-    if (wordsResponse[2][6] != "" && wordsResponse[3][6] != "" && wordsResponse[4][6] != "" && wordsResponse[5][6] != "") {
-        score++;;
+    //tip 3
+    if (wordsResponse[13][1] != "" && wordsResponse[13][2] != "" && wordsResponse[13][3] != "" && wordsResponse[13][4] != "" && wordsResponse[13][5] != "" && wordsResponse[13][6] != "" && wordsResponse[13][7] != "" && wordsResponse[13][8] != "" && wordsResponse[13][9] != "" && wordsResponse[13][10] != "" && wordsResponse[13][11] != "" && wordsResponse[13][12] != "" && wordsResponse[13][13] != "") {
+        score++;
         subtitle3.classList.add("right");
     } else {
         subtitle3.classList.remove("right");
     }
 
-    if (score == 3) {
+    //tip 4
+    if (wordsResponse[13][1] != "" && wordsResponse[14][1] != "" && wordsResponse[15][1] != "") {
+        score++;
+        subtitle4.classList.add("right");
+    } else {
+        subtitle4.classList.remove("right");
+    }
+
+    //tip 5
+    if (wordsResponse[11][11] != "" && wordsResponse[11][12] != "" && wordsResponse[11][13] != "") {
+        score++;
+        subtitle5.classList.add("right");
+    } else {
+        subtitle5.classList.remove("right");
+    }
+
+    //tip 6
+    if (wordsResponse[1][15] != "" && wordsResponse[2][15] != "" && wordsResponse[3][15] != "" && wordsResponse[4][15] != "" && wordsResponse[5][15] != "") {
+        score++;
+        subtitle6.classList.add("right");
+    } else {
+        subtitle6.classList.remove("right");
+    }
+
+    //tip 7
+    if (wordsResponse[8][11] != "" && wordsResponse[8][12] != "" && wordsResponse[8][13] != "" && wordsResponse[8][14] != "" && wordsResponse[8][15] != "") {
+        score++;
+        subtitle7.classList.add("right");
+    } else {
+        subtitle7.classList.remove("right");
+    }
+
+    //tip 8
+    if (wordsResponse[5][4] != "" && wordsResponse[5][5] != "" && wordsResponse[5][6] != "" && wordsResponse[5][7] != "" && wordsResponse[5][8] != "" && wordsResponse[5][9] != "" && wordsResponse[5][10] != "" && wordsResponse[5][12] != "" && wordsResponse[5][13] != "" && wordsResponse[5][15] != "" && wordsResponse[5][16] != "" && wordsResponse[5][17] != "" && wordsResponse[5][18] != "" && wordsResponse[5][19] != "") {
+        score++;
+        subtitle8.classList.add("right");
+    } else {
+        subtitle8.classList.remove("right");
+    }
+
+    //tip 9
+    if (wordsResponse[4][4] != "" && wordsResponse[5][4] != "" && wordsResponse[6][4] != "") {
+        score++;
+        subtitle9.classList.add("right");
+    } else {
+        subtitle9.classList.remove("right");
+    }
+
+    //tip 10
+    if (wordsResponse[11][18] != "" && wordsResponse[11][19] != "") {
+        score++;
+        subtitle10.classList.add("right");
+    } else {
+        subtitle10.classList.remove("right");
+    }
+
+    if (score == 18) {
         finalText.classList.add("active");
     } else {
         finalText.classList.remove("active");
@@ -87,8 +166,8 @@ window.addEventListener("load", () => {
         for (let column = 0; column < words[line].length; column++) {
             if (words[line][column] == "-") {
                 crossword.innerHTML += `<input disabled class="empty-input" value="-">`;
-            } else if (Number(words[line][column]) > 0) {
-                crossword.innerHTML += `<input disabled class="empty-input" value="${words[line][column]}.">`;
+            } else if (words[line][column].substring(1) == "." || words[line][column].substring(2) == ".") {
+                crossword.innerHTML += `<input disabled class="empty-input" value="${words[line][column]}">`;
             } else if (words[line][column] == "") {
                 crossword.innerHTML += `<input disabled class="empty-input">`;
             } else {
