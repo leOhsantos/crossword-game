@@ -1,25 +1,25 @@
 const crossword = document.querySelector(".crossword");
 const inputs = document.getElementsByTagName("input");
 
-const subtitle = document.querySelectorAll(".subtitle");
-const subtitle1 = document.getElementById("subtitle1");
-const subtitle2 = document.getElementById("subtitle2");
-const subtitle3 = document.getElementById("subtitle3");
-const subtitle4 = document.getElementById("subtitle4");
-const subtitle5 = document.getElementById("subtitle5");
-const subtitle6 = document.getElementById("subtitle6");
-const subtitle7 = document.getElementById("subtitle7");
-const subtitle8 = document.getElementById("subtitle8");
-const subtitle9 = document.getElementById("subtitle9");
-const subtitle10 = document.getElementById("subtitle10");
-const subtitle11 = document.getElementById("subtitle11");
-const subtitle12 = document.getElementById("subtitle12");
-const subtitle13 = document.getElementById("subtitle13");
-const subtitle14 = document.getElementById("subtitle14");
-const subtitle15 = document.getElementById("subtitle15");
-const subtitle16 = document.getElementById("subtitle16");
-const subtitle17 = document.getElementById("subtitle17");
-const subtitle18 = document.getElementById("subtitle18");
+const answer = document.querySelectorAll(".answer");
+const answer1 = document.getElementById("answer1");
+const answer2 = document.getElementById("answer2");
+const answer3 = document.getElementById("answer3");
+const answer4 = document.getElementById("answer4");
+const answer5 = document.getElementById("answer5");
+const answer6 = document.getElementById("answer6");
+const answer7 = document.getElementById("answer7");
+const answer8 = document.getElementById("answer8");
+const answer9 = document.getElementById("answer9");
+const answer10 = document.getElementById("answer10");
+const answer11 = document.getElementById("answer11");
+const answer12 = document.getElementById("answer12");
+const answer13 = document.getElementById("answer13");
+const answer14 = document.getElementById("answer14");
+const answer15 = document.getElementById("answer15");
+const answer16 = document.getElementById("answer16");
+const answer17 = document.getElementById("answer17");
+const answer18 = document.getElementById("answer18");
 
 const finalTextContainer = document.querySelector(".final-text-container");
 const resetBtn = document.getElementById("resetBtn");
@@ -80,145 +80,145 @@ function validateWord() {
     //tip 1
     if (wordsResponse[5][28] != "" && wordsResponse[6][28] != "" && wordsResponse[7][28] != "") {
         score++;
-        subtitle1.classList.add("right");
+        answer1.classList.add("right");
     } else {
-        subtitle1.classList.remove("right");
+        answer1.classList.remove("right");
     }
 
     //tip 2
     if (wordsResponse[6][12] != "" && wordsResponse[6][13] != "" && wordsResponse[6][14] != "") {
         score++;
-        subtitle2.classList.add("right");
+        answer2.classList.add("right");
     } else {
-        subtitle2.classList.remove("right");
+        answer2.classList.remove("right");
     }
 
     //tip 3
     if (wordsResponse[13][1] != "" && wordsResponse[13][2] != "" && wordsResponse[13][3] != "" && wordsResponse[13][4] != "" && wordsResponse[13][5] != "" && wordsResponse[13][6] != "" && wordsResponse[13][7] != "" && wordsResponse[13][8] != "" && wordsResponse[13][9] != "" && wordsResponse[13][10] != "" && wordsResponse[13][11] != "" && wordsResponse[13][12] != "" && wordsResponse[13][13] != "") {
         score++;
-        subtitle3.classList.add("right");
+        answer3.classList.add("right");
     } else {
-        subtitle3.classList.remove("right");
+        answer3.classList.remove("right");
     }
 
     //tip 4
     if (wordsResponse[13][1] != "" && wordsResponse[14][1] != "" && wordsResponse[15][1] != "") {
         score++;
-        subtitle4.classList.add("right");
+        answer4.classList.add("right");
     } else {
-        subtitle4.classList.remove("right");
+        answer4.classList.remove("right");
     }
 
     //tip 5
     if (wordsResponse[11][11] != "" && wordsResponse[11][12] != "" && wordsResponse[11][13] != "") {
         score++;
-        subtitle5.classList.add("right");
+        answer5.classList.add("right");
     } else {
-        subtitle5.classList.remove("right");
+        answer5.classList.remove("right");
     }
 
     //tip 6
     if (wordsResponse[1][15] != "" && wordsResponse[2][15] != "" && wordsResponse[3][15] != "" && wordsResponse[4][15] != "" && wordsResponse[5][15] != "") {
         score++;
-        subtitle6.classList.add("right");
+        answer6.classList.add("right");
     } else {
-        subtitle6.classList.remove("right");
+        answer6.classList.remove("right");
     }
 
     //tip 7
     if (wordsResponse[8][11] != "" && wordsResponse[8][12] != "" && wordsResponse[8][13] != "" && wordsResponse[8][14] != "" && wordsResponse[8][15] != "") {
         score++;
-        subtitle7.classList.add("right");
+        answer7.classList.add("right");
     } else {
-        subtitle7.classList.remove("right");
+        answer7.classList.remove("right");
     }
 
     //tip 8
     if (wordsResponse[5][4] != "" && wordsResponse[5][5] != "" && wordsResponse[5][6] != "" && wordsResponse[5][7] != "" && wordsResponse[5][8] != "" && wordsResponse[5][9] != "" && wordsResponse[5][10] != "" && wordsResponse[5][12] != "" && wordsResponse[5][13] != "" && wordsResponse[5][15] != "" && wordsResponse[5][16] != "" && wordsResponse[5][17] != "" && wordsResponse[5][18] != "" && wordsResponse[5][19] != "") {
         score++;
-        subtitle8.classList.add("right");
+        answer8.classList.add("right");
     } else {
-        subtitle8.classList.remove("right");
+        answer8.classList.remove("right");
     }
 
     //tip 9
     if (wordsResponse[4][4] != "" && wordsResponse[5][4] != "" && wordsResponse[6][4] != "") {
         score++;
-        subtitle9.classList.add("right");
+        answer9.classList.add("right");
     } else {
-        subtitle9.classList.remove("right");
+        answer9.classList.remove("right");
     }
 
     //tip 10
     if (wordsResponse[11][18] != "" && wordsResponse[11][19] != "") {
         score++;
-        subtitle10.classList.add("right");
+        answer10.classList.add("right");
     } else {
-        subtitle10.classList.remove("right");
+        answer10.classList.remove("right");
     }
 
     //tip 11
     if (wordsResponse[7][19] != "" && wordsResponse[7][20] != "" && wordsResponse[7][21] != "" && wordsResponse[7][22] != "" && wordsResponse[7][23] != "" && wordsResponse[7][24] != "" && wordsResponse[7][25] != "" && wordsResponse[7][27] != "" && wordsResponse[7][28] != "" && wordsResponse[7][29] != "") {
         score++;
-        subtitle11.classList.add("right");
+        answer11.classList.add("right");
     } else {
-        subtitle11.classList.remove("right");
+        answer11.classList.remove("right");
     }
 
     //tip 12
     if (wordsResponse[4][19] != "" && wordsResponse[5][19] != "" && wordsResponse[6][19] != "" && wordsResponse[7][19] != "" && wordsResponse[9][19] != "" && wordsResponse[10][19] != "" && wordsResponse[11][19] != "") {
         score++;
-        subtitle12.classList.add("right");
+        answer12.classList.add("right");
     } else {
-        subtitle12.classList.remove("right");
+        answer12.classList.remove("right");
     }
 
     //tip 13
     if (wordsResponse[13][4] != "" && wordsResponse[14][4] != "") {
         score++;
-        subtitle13.classList.add("right");
+        answer13.classList.add("right");
     } else {
-        subtitle13.classList.remove("right");
+        answer13.classList.remove("right");
     }
 
     //tip 14
     if (wordsResponse[5][9] != "" && wordsResponse[6][9] != "") {
         score++;
-        subtitle14.classList.add("right");
+        answer14.classList.add("right");
     } else {
-        subtitle14.classList.remove("right");
+        answer14.classList.remove("right");
     }
 
     //tip 15
     if (wordsResponse[5][12] != "" && wordsResponse[6][12] != "" && wordsResponse[7][12] != "" && wordsResponse[8][12] != "" && wordsResponse[10][12] != "" && wordsResponse[11][12] != "" && wordsResponse[12][12] != "" && wordsResponse[13][12] != "") {
         score++;
-        subtitle15.classList.add("right");
+        answer15.classList.add("right");
     } else {
-        subtitle15.classList.remove("right");
+        answer15.classList.remove("right");
     }
 
     //tip 16
     if (wordsResponse[10][7] != "" && wordsResponse[10][8] != "" && wordsResponse[10][9] != "" && wordsResponse[10][10] != "" && wordsResponse[10][12] != "" && wordsResponse[10][13] != "" && wordsResponse[10][14] != "" && wordsResponse[10][15] != "") {
         score++;
-        subtitle16.classList.add("right");
+        answer16.classList.add("right");
     } else {
-        subtitle16.classList.remove("right");
+        answer16.classList.remove("right");
     }
 
     //tip 17
     if (wordsResponse[1][12] != "" && wordsResponse[1][13] != "" && wordsResponse[1][14] != "" && wordsResponse[1][15] != "" && wordsResponse[1][16] != "" && wordsResponse[1][17] != "" && wordsResponse[1][18] != "") {
         score++;
-        subtitle17.classList.add("right");
+        answer17.classList.add("right");
     } else {
-        subtitle17.classList.remove("right");
+        answer17.classList.remove("right");
     }
 
     //tip 18
     if (wordsResponse[6][3] != "" && wordsResponse[6][4] != "" && wordsResponse[6][5] != "" && wordsResponse[6][6] != "" && wordsResponse[6][7] != "") {
         score++;
-        subtitle18.classList.add("right");
+        answer18.classList.add("right");
     } else {
-        subtitle18.classList.remove("right");
+        answer18.classList.remove("right");
     }
 
     if (score == 18) {
@@ -269,8 +269,8 @@ function resetCrossword() {
         ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""]
     ];
 
-    for (let i = 0; i < subtitle.length; i++) {
-        subtitle[i].classList.remove("right");
+    for (let i = 0; i < answer.length; i++) {
+        answer[i].classList.remove("right");
     }
 
     generateCrossword();

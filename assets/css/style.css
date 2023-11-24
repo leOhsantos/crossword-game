@@ -105,11 +105,11 @@ input:disabled {
     margin-bottom: 24px;
 }
 
-.subtitle {
+.answer {
     transition: all .4s ease-in-out;
 }
 
-.subtitle.right {
+.answer.right {
     color: #62de6b;
 }
 
