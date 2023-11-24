@@ -71,34 +71,38 @@ input:disabled {
 .tips-container {
     width: 25%;
     height: 100%;
-    padding: 24px;
+    padding: 24px 0 0 24px;
     background-color: #202020;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    overflow-y: scroll;
-}
-
-.tips-container::-webkit-scrollbar {
-    width: 6px;
-}
-
-.tips-container::-webkit-scrollbar-track {
-    background: #202020;
-}
-
-.tips-container::-webkit-scrollbar-thumb {
-    background-color: #ffffff;
 }
 
 .tips-container h1 {
     align-self: center;
     text-transform: uppercase;
-    margin-bottom: 12px;
+    padding-bottom: 24px;
 }
 
-.tips-container p {
-    margin: 16px 0;
+.tips::-webkit-scrollbar {
+    width: 6px;
+}
+
+.tips::-webkit-scrollbar-track {
+    background: #202020;
+}
+
+.tips::-webkit-scrollbar-thumb {
+    background-color: #ffffff;
+}
+
+.tips {
+    overflow-y: scroll;
+    padding-right: 20px;
+}
+
+.tips p {
+    margin-bottom: 24px;
 }
 
 .subtitle {
