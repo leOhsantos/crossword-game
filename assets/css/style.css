@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -11,7 +13,7 @@ body {
 }
 
 body {
-    font-family: sans-serif;
+    font-family: 'Poppins', sans-serif;
     color: #ffffff;
     display: flex;
     justify-content: center;
@@ -30,10 +32,15 @@ input {
     border-radius: 6px;
     border: none;
     text-align: center;
+    transition: all .4s .3s ease-in-out;
 }
 
 input:focus {
     outline: none;
+}
+
+input:disabled {
+    background-color: #e4e4e4;
 }
 
 .crossword-container {
@@ -46,11 +53,18 @@ input:focus {
     align-items: center;
 }
 
+.hyphen-input {
+    width: 32px;
+    height: 28px;
+    background-color: transparent !important;
+    font-size: 1.2rem;
+    color: #ffffff;
+}
+
 .empty-input {
     width: 32px;
     height: 28px;
-    background-color: transparent;
-    font-size: 1rem;
+    background-color: transparent !important;
     color: #ffffff;
 }
 
@@ -80,27 +94,51 @@ input:focus {
 .tips-container h1 {
     align-self: center;
     text-transform: uppercase;
-    margin-bottom: 24px;
+    margin-bottom: 12px;
+}
+
+.tips-container p {
+    margin: 16px 0;
 }
 
 .subtitle {
     transition: all .4s ease-in-out;
-    margin: 16px 0;
 }
 
 .subtitle.right {
     color: #62de6b;
 }
 
-#finalText {
-    align-self: center;
+.final-text-container {
+    position: absolute;
+    bottom: 70px;
+    right: 34%;
     opacity: 0;
     visibility: hidden;
-    margin-top: 24px;
     transition: all .4s .3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-#finalText.active {
+.final-text-container.active {
     opacity: 1;
     visibility: visible;
+}
+
+#resetBtn {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    margin-top: 8px;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 14px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all .4s ease-in-out;
+}
+
+#resetBtn:hover {
+    padding: 8px 18px;
 }

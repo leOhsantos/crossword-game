@@ -1,5 +1,7 @@
 const crossword = document.querySelector(".crossword");
+const inputs = document.getElementsByTagName("input");
 
+const subtitle = document.querySelectorAll(".subtitle");
 const subtitle1 = document.getElementById("subtitle1");
 const subtitle2 = document.getElementById("subtitle2");
 const subtitle3 = document.getElementById("subtitle3");
@@ -19,7 +21,8 @@ const subtitle16 = document.getElementById("subtitle16");
 const subtitle17 = document.getElementById("subtitle17");
 const subtitle18 = document.getElementById("subtitle18");
 
-const finalText = document.getElementById("finalText");
+const finalTextContainer = document.querySelector(".final-text-container");
+const resetBtn = document.getElementById("resetBtn");
 
 let words = [
     ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "6.", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
@@ -59,7 +62,7 @@ let wordsResponse = [
     ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""]
 ];
 
-function verifyInput(input) {
+function checkInput(input) {
     let letter = input.getAttribute("data-letter");
     let line = Number(input.getAttribute("data-line"));
     let column = Number(input.getAttribute("data-column"));
@@ -71,7 +74,7 @@ function verifyInput(input) {
     }
 }
 
-function validateResponse() {
+function validateWord() {
     let score = 0;
 
     //tip 1
@@ -154,26 +157,126 @@ function validateResponse() {
         subtitle10.classList.remove("right");
     }
 
-    if (score == 18) {
-        finalText.classList.add("active");
+    //tip 11
+    if (wordsResponse[7][19] != "" && wordsResponse[7][20] != "" && wordsResponse[7][21] != "" && wordsResponse[7][22] != "" && wordsResponse[7][23] != "" && wordsResponse[7][24] != "" && wordsResponse[7][25] != "" && wordsResponse[7][27] != "" && wordsResponse[7][28] != "" && wordsResponse[7][29] != "") {
+        score++;
+        subtitle11.classList.add("right");
     } else {
-        finalText.classList.remove("active");
+        subtitle11.classList.remove("right");
+    }
+
+    //tip 12
+    if (wordsResponse[4][19] != "" && wordsResponse[5][19] != "" && wordsResponse[6][19] != "" && wordsResponse[7][19] != "" && wordsResponse[9][19] != "" && wordsResponse[10][19] != "" && wordsResponse[11][19] != "") {
+        score++;
+        subtitle12.classList.add("right");
+    } else {
+        subtitle12.classList.remove("right");
+    }
+
+    //tip 13
+    if (wordsResponse[13][4] != "" && wordsResponse[14][4] != "") {
+        score++;
+        subtitle13.classList.add("right");
+    } else {
+        subtitle13.classList.remove("right");
+    }
+
+    //tip 14
+    if (wordsResponse[5][9] != "" && wordsResponse[6][9] != "") {
+        score++;
+        subtitle14.classList.add("right");
+    } else {
+        subtitle14.classList.remove("right");
+    }
+
+    //tip 15
+    if (wordsResponse[5][12] != "" && wordsResponse[6][12] != "" && wordsResponse[7][12] != "" && wordsResponse[8][12] != "" && wordsResponse[10][12] != "" && wordsResponse[11][12] != "" && wordsResponse[12][12] != "" && wordsResponse[13][12] != "") {
+        score++;
+        subtitle15.classList.add("right");
+    } else {
+        subtitle15.classList.remove("right");
+    }
+
+    //tip 16
+    if (wordsResponse[10][7] != "" && wordsResponse[10][8] != "" && wordsResponse[10][9] != "" && wordsResponse[10][10] != "" && wordsResponse[10][12] != "" && wordsResponse[10][13] != "" && wordsResponse[10][14] != "" && wordsResponse[10][15] != "") {
+        score++;
+        subtitle16.classList.add("right");
+    } else {
+        subtitle16.classList.remove("right");
+    }
+
+    //tip 17
+    if (wordsResponse[1][12] != "" && wordsResponse[1][13] != "" && wordsResponse[1][14] != "" && wordsResponse[1][15] != "" && wordsResponse[1][16] != "" && wordsResponse[1][17] != "" && wordsResponse[1][18] != "") {
+        score++;
+        subtitle17.classList.add("right");
+    } else {
+        subtitle17.classList.remove("right");
+    }
+
+    //tip 18
+    if (wordsResponse[6][3] != "" && wordsResponse[6][4] != "" && wordsResponse[6][5] != "" && wordsResponse[6][6] != "" && wordsResponse[6][7] != "") {
+        score++;
+        subtitle18.classList.add("right");
+    } else {
+        subtitle18.classList.remove("right");
+    }
+
+    if (score == 18) {
+        finalTextContainer.classList.add("active");
+
+        for (let i = 0; i < inputs.length; i++) {
+            inputs[i].setAttribute("disabled", true);
+        }
     }
 }
 
-window.addEventListener("load", () => {
+function generateCrossword() {
     for (let line = 0; line < words.length; line++) {
         for (let column = 0; column < words[line].length; column++) {
             if (words[line][column] == "-") {
-                crossword.innerHTML += `<input disabled class="empty-input" value="-">`;
+                crossword.innerHTML += `<input disabled class="hyphen-input" value="-">`;
             } else if (words[line][column].substring(1) == "." || words[line][column].substring(2) == ".") {
                 crossword.innerHTML += `<input disabled class="empty-input" value="${words[line][column]}">`;
             } else if (words[line][column] == "") {
                 crossword.innerHTML += `<input disabled class="empty-input">`;
             } else {
-                crossword.innerHTML += `<input maxlength="1" oninput="verifyInput(this), validateResponse()" data-letter="${words[line][column]}" data-line="${line}" data-column="${column}">`;
+                crossword.innerHTML += `<input maxlength="1" oninput="checkInput(this), validateWord()" data-letter="${words[line][column]}" data-line="${line}" data-column="${column}">`;
             }
         }
         crossword.innerHTML += "<br>";
     }
-});
+}
+
+function resetCrossword() {
+    crossword.innerHTML = "";
+
+    wordsResponse = [
+        ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
+        ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
+        ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
+        ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
+        ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
+        ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
+        ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
+        ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
+        ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
+        ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
+        ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
+        ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
+        ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
+        ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
+        ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
+        ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""]
+    ];
+
+    for (let i = 0; i < subtitle.length; i++) {
+        subtitle[i].classList.remove("right");
+    }
+
+    generateCrossword();
+    finalTextContainer.classList.remove("active");
+}
+
+resetBtn.addEventListener("click", resetCrossword);
+
+window.addEventListener("load", () => generateCrossword());
