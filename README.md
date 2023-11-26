@@ -1,4 +1,4 @@
-<h1>Crossword Game</h1>
+<h1>🕹 Crossword Game</h1>
 
 Jogo de palavras cruzadas desenvolvido para a matéria de Arquitetura Computacional na SPTech.
 
